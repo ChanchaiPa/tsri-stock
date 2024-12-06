@@ -1,0 +1,39 @@
+	int|sup_id
+	varchar|sup_code
+	varchar|sup_name
+	varchar|sub_addr1
+	varchar|sub_addr2
+	varchar|sub_addr3
+	varchar|sup_email
+	varchar|sup_tel
+	varchar|sup_fax
+	varchar|sup_contact_name
+	varchar|sup_regis_id
+	datetime|sup_regis_dt
+	char|sup_status
+
+	int|grp_id
+	varchar|grp_code
+	varchar|grp_name
+	varchar|grp_regis_id
+	datetime|grp_regis_dt
+	char|grp_status
+
+	int|cat_id
+	varchar|cat_code
+	varchar|cat_name
+	int|cat_grp_id
+	varchar|cat_regis_id
+	datetime|cat_regis_dt
+	char|cat_status
+
+int|ast_id
+varchar|ast_code
+varchar|ast_name
+int|ast_grp_id
+int|ast_cat_id
+double|ast_min_purchase
+varchar|ast_unit
+varchar|ast_regis_id
+datetime|ast_regis_dt
+char|ast_status

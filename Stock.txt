@@ -1,0 +1,72 @@
+CREATE TABLE `stock1_supplier` (
+  `sup_id` int NOT NULL AUTO_INCREMENT,
+  `sup_code` varchar(10) DEFAULT NULL,
+  `sup_name` varchar(150) NOT NULL,
+  `sup_addr1` varchar(300) DEFAULT NULL,
+  `sup_addr2` varchar(300) DEFAULT NULL,
+  `sup_addr3` varchar(300) DEFAULT NULL,
+  `sup_email` varchar(30) DEFAULT NULL,
+  `sup_tel` varchar(30) DEFAULT NULL,
+  `sup_fax` varchar(30) DEFAULT NULL,
+  `sup_contact_name` varchar(50) DEFAULT NULL,
+  `sup_regis_id` varchar(10) DEFAULT NULL,
+  `sup_regis_dt` datetime DEFAULT NULL,
+  `sup_status` char(1) DEFAULT NULL,
+  PRIMARY KEY (`sup_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4
+
+
+
+CREATE TABLE `stock2_group` (
+  `grp_id` int NOT NULL AUTO_INCREMENT,
+  `grp_code` varchar(10) DEFAULT NULL,
+  `grp_name` varchar(150) NOT NULL,
+  `grp_regis_id` varchar(10) DEFAULT NULL,
+  `grp_regis_dt` datetime DEFAULT NULL,
+  `grp_status` char(1) DEFAULT NULL,
+  PRIMARY KEY (`grp_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4
+
+
+
+CREATE TABLE `stock3_category` (
+  `cat_id` int NOT NULL AUTO_INCREMENT,
+  `cat_code` varchar(10) DEFAULT NULL,
+  `cat_name` varchar(150) NOT NULL,
+  `cat_grp_id` int NOT NULL,
+  `cat_regis_id` varchar(10) DEFAULT NULL,
+  `cat_regis_dt` datetime DEFAULT NULL,
+  `cat_status` char(1) DEFAULT NULL,
+  PRIMARY KEY (`cat_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4
+
+
+
+CREATE TABLE `stock4_asset` (
+  `ast_id` int NOT NULL AUTO_INCREMENT,
+  `ast_code` varchar(10) DEFAULT NULL,
+  `ast_name` varchar(150) NOT NULL,
+  `ast_grp_id` int NOT NULL,
+  `ast_cat_id` int NOT NULL,
+  `ast_min_purchase` double DEFAULT 0,
+  `ast_unit` varchar(10) DEFAULT NULL,
+  `ast_regis_id` varchar(10) DEFAULT NULL,
+  `ast_regis_dt` datetime DEFAULT NULL,
+  `ast_status` char(1) DEFAULT NULL,
+  PRIMARY KEY (`ast_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4
+
+
+
+
+create view v_stock3_category as
+ select cat.*, grp.grp_name
+ from stock3_category cat
+ left join stock2_group grp on cat.cat_grp_id = grp.grp_id
+ 
+create view v_stock4_asset as 
+select ast.*, grp.grp_name, cat.cat_name
+from stock4_asset ast
+left join stock2_group grp on ast.ast_grp_id = grp.grp_id
+left join stock3_category cat on ast.ast_cat_id = cat.cat_id
+

@@ -1,0 +1,39 @@
+	int|sup_id|0|5|0
+	varchar|sup_code|1|10|0
+	varchar|sup_name|0|150|0
+	varchar|sub_addr1|1|300|0
+	varchar|sub_addr2|1|300|0
+	varchar|sub_addr3|1|300|0
+	varchar|sup_email|1|30|0
+	varchar|sup_tel|1|30|0
+	varchar|sup_fax|1|30|0
+	varchar|sup_contact_name|1|50|0
+	varchar|sup_regis_id|1|10|0
+	datetime|sup_regis_dt|1|20|0
+	char|sup_status|1|1|0
+
+	int|grp_id|0|5|0
+	varchar|grp_code|1|10|0
+	varchar|grp_name|0|150|0
+	varchar|grp_regis_id|1|10|0
+	datetime|grp_regis_dt|1|20|0
+	char|grp_status|1|1|0
+
+	int|cat_id|0|5|0
+	varchar|cat_code|1|10|0
+	varchar|cat_name|0|150|0
+	int|cat_grp_id|0|5|0
+	varchar|cat_regis_id|1|10|0
+	datetime|cat_regis_dt|1|20|0
+	char|cat_status|1|1|0
+
+int|ast_id|0|5|0
+varchar|ast_code|1|10|0
+varchar|ast_name|0|150|0
+int|ast_grp_id|0|5|0
+int|ast_cat_id|0|5|0
+double|ast_min_purchase|1|5|0
+varchar|ast_unit|1|20|0
+varchar|ast_regis_id|1|10|0
+datetime|ast_regis_dt|1|20|0
+char|ast_status|1|1|0
