@@ -69,4 +69,9 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            cleanWs()
+        }
+    }
 }
