@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     environment {
-        LIBMODULE = env.WORKSPACE + "\\Jenkins-lib.groovy"	//'D:\\Program\\JenkinsHome\\groovy-4.0.24\\workspace\\demo-editfile\\jenkins-lib.groovy
+        LIBMODULE = "${WORKSPACE}\\Jenkins-lib.groovy"	//'D:\\Program\\JenkinsHome\\groovy-4.0.24\\workspace\\demo-editfile\\jenkins-lib.groovy
     }    
     
     stages {
